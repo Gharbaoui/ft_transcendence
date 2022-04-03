@@ -57,6 +57,7 @@
 declare var require: any; // important for require with typescript
 import { defineComponent } from 'vue'
 import axios from 'axios';
+import store from '@/store';
 export default defineComponent({
     name: 'ProfileBlock',
     data()
@@ -188,6 +189,8 @@ export default defineComponent({
                 this.user_info.user_name = data.user_name;
                 this.user_info.user_id = data.user_id;
                 this.user_info.avatar_file_name = data.avatar_file_name;
+                store.commit('updateUserData', {user_name: this.user_info.user_name, user_id: this.user_info.user_id});
+
             }catch(e)
             {
                 console.error('error happend');

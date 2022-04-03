@@ -5,7 +5,7 @@ import FriendsBlock from '@/components/Friends.vue'
 import LeaderBoardBlock from '@/components/LeaderBoard.vue'
 import MatchHistoryBlock from '@/components/MatchHistory.vue'
 import GameBlock from '@/components/Game.vue'
-import ChatBlock from '@/components/Chat.vue'
+import ChatBlock from '@/components/CHAT/Chat.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {

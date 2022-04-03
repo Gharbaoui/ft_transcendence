@@ -27,26 +27,25 @@
 
 
 <script lang="ts">
+import store from '@/store';
 import { defineComponent } from 'vue'
 
 export default defineComponent({
     name: 'ChatNavBarBlock',
     data(){
         return {
-            state: 0 as number
         }   
     },
     methods: {
         btnPressed(index:number)
         {
-            this.state = index;
-            this.$emit('chatBtnPressed', index);
+            store.commit('updateChatState', index);
         }
     },
     computed: {
         isVisible() : number
         {
-            return this.state;
+            return store.state.chatState.index;
         }
     }
 })
